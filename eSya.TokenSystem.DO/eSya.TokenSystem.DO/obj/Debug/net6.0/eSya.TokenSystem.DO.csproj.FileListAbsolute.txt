@@ -1,0 +1,12 @@
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.deps.json
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.csproj.AssemblyReference.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.AssemblyInfoInputs.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.AssemblyInfo.cs
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\refint\eSya.TokenSystem.DO.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\ref\eSya.TokenSystem.DO.dll

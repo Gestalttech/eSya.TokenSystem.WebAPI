@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSya.TokenSystem.WebAPI", "eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI.csproj", "{A1996EAC-2377-4486-8A75-B6B521B068F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSya.TokenSystem.DL", "..\eSya.TokenSystem.DL\eSya.TokenSystem.DL\eSya.TokenSystem.DL.csproj", "{BC7AA9A2-04B4-4BF1-922C-B5BB8BA9DEC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSya.TokenSystem.IF", "..\eSya.TokenSystem.IF\eSya.TokenSystem.IF\eSya.TokenSystem.IF.csproj", "{8D84EFD7-2362-4BA4-A7D8-742E23837E80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSya.TokenSystem.DO", "..\eSya.TokenSystem.DO\eSya.TokenSystem.DO\eSya.TokenSystem.DO.csproj", "{D1168B11-EE6A-44B5-9F33-B83E75E3325A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1996EAC-2377-4486-8A75-B6B521B068F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1996EAC-2377-4486-8A75-B6B521B068F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1996EAC-2377-4486-8A75-B6B521B068F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1996EAC-2377-4486-8A75-B6B521B068F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7AA9A2-04B4-4BF1-922C-B5BB8BA9DEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7AA9A2-04B4-4BF1-922C-B5BB8BA9DEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7AA9A2-04B4-4BF1-922C-B5BB8BA9DEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7AA9A2-04B4-4BF1-922C-B5BB8BA9DEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D84EFD7-2362-4BA4-A7D8-742E23837E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D84EFD7-2362-4BA4-A7D8-742E23837E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D84EFD7-2362-4BA4-A7D8-742E23837E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D84EFD7-2362-4BA4-A7D8-742E23837E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1168B11-EE6A-44B5-9F33-B83E75E3325A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1168B11-EE6A-44B5-9F33-B83E75E3325A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1168B11-EE6A-44B5-9F33-B83E75E3325A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1168B11-EE6A-44B5-9F33-B83E75E3325A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57817A46-D855-4A9C-B509-4F6514894E13}
+	EndGlobalSection
+EndGlobal
