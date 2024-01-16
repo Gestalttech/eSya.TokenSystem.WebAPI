@@ -277,3 +277,4 @@ D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\eSy
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\obj\Debug\net6.0\eSya.TokenSystem.WebAPI.pdb
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\obj\Debug\net6.0\eSya.TokenSystem.WebAPI.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\obj\Debug\net6.0\ref\eSya.TokenSystem.WebAPI.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\eSya.TokenSystem.WebAPI\obj\Debug\net6.0\eSya.TokenSystem.WebAPI.sourcelink.json

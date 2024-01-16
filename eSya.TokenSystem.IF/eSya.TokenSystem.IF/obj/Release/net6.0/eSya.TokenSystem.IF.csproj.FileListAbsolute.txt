@@ -1,0 +1,16 @@
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\bin\Release\net6.0\eSya.TokenSystem.IF.deps.json
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\bin\Release\net6.0\eSya.TokenSystem.IF.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\bin\Release\net6.0\eSya.TokenSystem.IF.pdb
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\bin\Release\net6.0\eSya.TokenSystem.DO.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\bin\Release\net6.0\eSya.TokenSystem.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.csproj.AssemblyReference.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.AssemblyInfoInputs.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.AssemblyInfo.cs
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.sourcelink.json
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.csproj.CopyComplete
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\refint\eSya.TokenSystem.IF.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\eSya.TokenSystem.IF.pdb
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.IF\eSya.TokenSystem.IF\obj\Release\net6.0\ref\eSya.TokenSystem.IF.dll

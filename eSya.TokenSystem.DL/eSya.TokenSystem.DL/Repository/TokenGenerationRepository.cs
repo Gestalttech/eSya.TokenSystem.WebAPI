@@ -47,7 +47,7 @@ namespace eSya.TokenSystem.DL.Repository
                               && w.TokenType == obj.TokenType
                               && w.TokenDate.Date == System.DateTime.Now.Date)
                           .Select(s => s.SequeueNumber)
-                          .DefaultIfEmpty(0).Max();
+                          .DefaultIfEmpty().Max();
                         tSqNo = tSqNo + 1;
 
                         var sr_token = token_type.TokenPrefix + (Convert.ToInt32(tSqNo)).ToString().PadLeft(token_type.TokenNumberLength, '0');
@@ -113,7 +113,7 @@ namespace eSya.TokenSystem.DL.Repository
 
                         Random rnd = new Random();
                         var OTP = rnd.Next(1000, 9999).ToString();
-                        var _id = db.GtEcmotps.Select(s => s.Id).DefaultIfEmpty(0).Max();
+                        var _id = db.GtEcmotps.Select(s => s.Id).DefaultIfEmpty().Max();
                         _id = _id + 1;
 
                         var otp = new GtEcmotp

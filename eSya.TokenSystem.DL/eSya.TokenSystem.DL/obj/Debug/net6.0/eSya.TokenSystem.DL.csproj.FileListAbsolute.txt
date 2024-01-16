@@ -17,3 +17,4 @@ D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DL\eSya.To
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DL\eSya.TokenSystem.DL\obj\Debug\net6.0\eSya.TokenSystem.DL.pdb
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DL\eSya.TokenSystem.DL\obj\Debug\net6.0\eSya.TokenSystem.DL.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DL\eSya.TokenSystem.DL\obj\Debug\net6.0\ref\eSya.TokenSystem.DL.dll
+D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DL\eSya.TokenSystem.DL\obj\Debug\net6.0\eSya.TokenSystem.DL.sourcelink.json
