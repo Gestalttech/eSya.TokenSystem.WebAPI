@@ -43,6 +43,8 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 });
 
 builder.Services.AddLocalization();
+
+
 //localization
 builder.Services.AddScoped<ITokenConfigurationRepository, TokenConfigurationRepository>();
 builder.Services.AddScoped<ICounterMappingRepository, CounterMappingRepository>();
@@ -80,3 +82,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+//changes for testing
