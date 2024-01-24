@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BzDJITKlzyF1G81CtIHfj2+0DWKGXM4JyEI+y2PSSTo=",
+  "Hash": "CYR4yRWDOw5seQgRNs3W6LTHj8ZMG+LhdMewvtpj9gM=",
   "Source": "eSya.TokenSystem.WebAPI",
   "BasePath": "_content/eSya.TokenSystem.WebAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "eSya.TokenSystem.WebAPI\\wwwroot",
       "Source": "eSya.TokenSystem.WebAPI",
-      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
       "BasePath": "_content/eSya.TokenSystem.WebAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "Identity": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\ar-EG.json",
       "SourceId": "eSya.TokenSystem.WebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
       "BasePath": "_content/eSya.TokenSystem.WebAPI",
       "RelativePath": "Resources/ar-EG.json",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\ar-EG.json"
     },
     {
-      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "Identity": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\en-US.json",
       "SourceId": "eSya.TokenSystem.WebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\",
       "BasePath": "_content/eSya.TokenSystem.WebAPI",
       "RelativePath": "Resources/en-US.json",
       "AssetKind": "All",

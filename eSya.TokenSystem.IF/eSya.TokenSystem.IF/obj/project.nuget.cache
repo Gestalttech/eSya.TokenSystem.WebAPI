@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FSfQ7qYdq2lfFU745KAUgMMf/Wv+hMj8TlEJtOWicHDNdFiRymxKEEBCs5W6Xvd4/1MgTqmf8L54ukzRglqOCg==",
+  "dgSpecHash": "//xhDkYdhSmK2rj+nqP7RVcsQAShmtJvB1Fl0zZV7DKpjtkxxFQaTkSHdFeRmU0fDxfqZWZ2ZD40LemRf1lBqQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
+  "projectFilePath": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

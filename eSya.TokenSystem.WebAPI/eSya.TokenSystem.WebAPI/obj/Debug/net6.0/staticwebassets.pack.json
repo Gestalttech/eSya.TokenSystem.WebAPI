@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "Id": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\ar-EG.json",
       "PackagePath": "staticwebassets\\Resources\\ar-EG.json"
     },
     {
-      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "Id": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.WebAPI\\wwwroot\\Resources\\en-US.json",
       "PackagePath": "staticwebassets\\Resources\\en-US.json"
     },
     {

@@ -10,3 +10,15 @@ D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.To
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.pdb
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\ref\eSya.TokenSystem.DO.dll
 D:\Projects\eSyaProjects2022\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.sourcelink.json
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.deps.json
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.dll
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\bin\Debug\net6.0\eSya.TokenSystem.DO.pdb
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.GeneratedMSBuildEditorConfig.editorconfig
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.AssemblyInfoInputs.cache
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.AssemblyInfo.cs
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.csproj.CoreCompileInputs.cache
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.sourcelink.json
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.dll
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\refint\eSya.TokenSystem.DO.dll
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\eSya.TokenSystem.DO.pdb
+D:\eSyaEnterprise\eSya.TokenSystem.WebAPI\eSya.TokenSystem.DO\eSya.TokenSystem.DO\obj\Debug\net6.0\ref\eSya.TokenSystem.DO.dll

@@ -27,23 +27,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lenovo\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
+      "projectUniqueName": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
       "projectName": "eSya.TokenSystem.IF",
-      "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
-      "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\obj\\",
+      "projectPath": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.IF\\eSya.TokenSystem.IF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -57,8 +60,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO.csproj": {
-              "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO.csproj"
+            "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO.csproj": {
+              "projectPath": "D:\\eSyaEnterprise\\eSya.TokenSystem.WebAPI\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO\\eSya.TokenSystem.DO.csproj"
             }
           }
         }
@@ -88,7 +91,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
