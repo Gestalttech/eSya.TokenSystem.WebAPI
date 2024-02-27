@@ -6,8 +6,10 @@ namespace eSya.TokenSystem.DL.Entities
     public partial class GtTokm03
     {
         public int BusinessKey { get; set; }
-        public string CounterNumber { get; set; } = null!;
+        public string TokenPrefix { get; set; } = null!;
         public int FloorId { get; set; }
+        public string CounterNumber { get; set; } = null!;
+        public string CounterKey { get; set; } = null!;
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

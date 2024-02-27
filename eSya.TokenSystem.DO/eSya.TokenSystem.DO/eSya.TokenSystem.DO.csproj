@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="DO_DisplaySystemConfig.cs" />
+    <Compile Remove="DO_OTP.cs" />
+    <Compile Remove="DO_Token.cs" />
   </ItemGroup>
 
 </Project>

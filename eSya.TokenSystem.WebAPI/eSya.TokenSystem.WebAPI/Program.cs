@@ -48,9 +48,8 @@ builder.Services.AddLocalization();
 //localization
 builder.Services.AddScoped<ITokenConfigurationRepository, TokenConfigurationRepository>();
 builder.Services.AddScoped<ICounterMappingRepository, CounterMappingRepository>();
-builder.Services.AddScoped<ITokenGenerationRepository, TokenGenerationRepository>();
-builder.Services.AddScoped<ITokenManagementRepository, TokenManagementRepository>();
-builder.Services.AddScoped<IDisplaySystemRepository, DisplaySystemRepository>();
+builder.Services.AddScoped<ICommonDataRepository, CommonDataRepository>();
+
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
 builder.Services.AddControllers();

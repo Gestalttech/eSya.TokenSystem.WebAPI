@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static eSya.TokenSystem.DO.DO_CounterMapping;
 
 namespace eSya.TokenSystem.DL.Repository
 {
@@ -49,19 +50,19 @@ namespace eSya.TokenSystem.DL.Repository
             {
                 try
                 {
-                    var ds = await db.GtTokm03s.Where(r => r.BusinessKey == businesskey).Join(db.GtEcapcds,
+                    var ds = await db.GtTokm02s.Where(r => r.BusinessKey == businesskey).Join(db.GtEcapcds,
                             x => x.FloorId,
                             y => y.ApplicationCode,
                             (x, y) => new DO_CounterCreation
                             {
                                 BusinessKey = x.BusinessKey,
+                                FloorId = x.FloorId,
                                 CounterNumber = x.CounterNumber,
                                 ActiveStatus = x.ActiveStatus,
-                                FloorId = x.FloorId,
                                 FloorName = y.CodeDesc
                             }).ToListAsync();
-
-                    return ds;
+                   
+                    return ds.OrderBy(x => x.FloorName).ThenBy(x => x.CounterNumber).ToList();
                 }
 
                 catch (Exception ex)
@@ -79,22 +80,22 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var _counter = db.GtTokm03s.Where(x => x.BusinessKey == obj.BusinessKey && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var _counter = db.GtTokm02s.Where(x => x.BusinessKey == obj.BusinessKey && x.FloorId == obj.FloorId && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_counter != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0185", Message = string.Format(_localizer[name: "W0185"]) };
                         }
 
-                        GtTokm03 counter = new GtTokm03();
+                        GtTokm02 counter = new GtTokm02();
                         counter.BusinessKey = obj.BusinessKey;
+                        counter.FloorId = obj.FloorId;
                         counter.CounterNumber = obj.CounterNumber;
                         counter.ActiveStatus = obj.ActiveStatus;
-                        counter.FloorId = obj.FloorId;
                         counter.FormId = obj.FormId;
                         counter.CreatedBy = obj.UserID;
                         counter.CreatedOn = System.DateTime.Now;
                         counter.CreatedTerminal = obj.TerminalID;
-                        db.GtTokm03s.Add(counter);
+                        db.GtTokm02s.Add(counter);
                         await db.SaveChangesAsync();
                         dbContext.Commit();
                         return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
@@ -117,12 +118,11 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var _counter = db.GtTokm03s.Where(x => x.BusinessKey == obj.BusinessKey && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var _counter = db.GtTokm02s.Where(x => x.BusinessKey == obj.BusinessKey && x.FloorId == obj.FloorId && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_counter == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0186", Message = string.Format(_localizer[name: "W0186"]) };
                         }
-                        _counter.FloorId = obj.FloorId;
                         _counter.ActiveStatus = obj.ActiveStatus;
                         _counter.ModifiedBy = obj.UserID;
                         _counter.ModifiedOn = System.DateTime.Now;
@@ -142,7 +142,7 @@ namespace eSya.TokenSystem.DL.Repository
             }
         }
 
-        public async Task<DO_ReturnParameter> ActiveOrDeActiveTokenCounter(bool status, int businesskey, string counternumber)
+        public async Task<DO_ReturnParameter> ActiveOrDeActiveTokenCounter(bool status, int businesskey, string counternumber,int floorId)
         {
             using (var db = new eSyaEnterprise())
             {
@@ -150,7 +150,7 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var _counter = db.GtTokm03s.Where(x => x.BusinessKey == businesskey && x.CounterNumber.ToUpper().Replace(" ", "") == counternumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var _counter = db.GtTokm02s.Where(x => x.BusinessKey == businesskey && x.FloorId == floorId && x.CounterNumber.ToUpper().Replace(" ", "") == counternumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_counter == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0186", Message = string.Format(_localizer[name: "W0186"]) };
@@ -181,13 +181,62 @@ namespace eSya.TokenSystem.DL.Repository
         #endregion
 
         #region Counter Mapping 
+
+        public async Task<List<DO_TokenConfiguration>> GetActiveTokensPrefix()
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                try
+                {
+                    var tokens = await db.GtTokm01s.Where(x => x.ActiveStatus == true)
+
+                                        .Select(t => new DO_TokenConfiguration
+                                        {
+                                            TokenPrefix = t.TokenPrefix,
+                                            TokenDesc = t.TokenDesc
+                                        }).ToListAsync();
+                    return tokens;
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public async Task<List<DO_Floor>> GetActiveFloorsbyBusinessKey(int businesskey)
+        {
+            using (var db = new eSyaEnterprise())
+            {
+                try
+                {
+                    var floors = await db.GtTokm02s.Where(x => x.ActiveStatus == true && x.BusinessKey==businesskey).Join(db.GtEcapcds,
+                        x=>new {x.FloorId},
+                        y => new {FloorId=y.ApplicationCode}, (x, y) => new { x, y })
+                                        .Select(t => new DO_Floor
+                                        {
+                                            FloorId = t.x.FloorId,
+                                            FloorName = t.y.CodeDesc
+                                        }).
+                    GroupBy(y => y.FloorId, (key, grp) => grp.FirstOrDefault())
+                  .ToListAsync();
+                    return floors;
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
         public async Task<List<DO_CounterCreation>> GetCounterNumbersbyFloorId(int floorId)
         {
             using (var db = new eSyaEnterprise())
             {
                 try
                 {
-                    var ds = await db.GtTokm03s.Where(x => x.FloorId == floorId && x.ActiveStatus == true).Select(
+                    var ds = await db.GtTokm02s.Where(x => x.FloorId == floorId && x.ActiveStatus == true).Select(
                           f => new DO_CounterCreation
                           {
                               CounterNumber = f.CounterNumber
@@ -208,28 +257,35 @@ namespace eSya.TokenSystem.DL.Repository
             {
                 try
                 {
-                    var ds = await db.GtTokm02s.Where(k => k.BusinessKey == businesskey).Join(db.GtTokm01s,
-                               x => x.TokenType.ToUpper().Replace(" ", ""),
-                               y => y.TokenType.ToUpper().Replace(" ", ""),
-                               (x, y) => new { x, y }).Join(db.GtTokm03s,
-                               a => a.x.CounterNumber.ToUpper().Replace(" ", ""),
-                               p => p.CounterNumber.ToUpper().Replace(" ", ""), (a, p) => new { a, p }).Join(db.GtEcapcds,
-                                //b => b.a.x.FloorId,
-                                b => b.p.FloorId,
-                               c => c.ApplicationCode, (b, c) => new { b, c }).Select(r => new DO_CounterMapping
+                   
+                    var ds = await db.GtTokm03s.Where(k => k.BusinessKey == businesskey).Join(db.GtTokm01s,
+                               x => x.TokenPrefix.ToUpper().Replace(" ", ""),
+                               y => y.TokenPrefix.ToUpper().Replace(" ", ""),
+                               (x, y) => new { x, y }).Join(db.GtTokm02s,
+                               a => new { a.x.CounterNumber, a.x.FloorId },
+                               p => new { p.CounterNumber, p.FloorId },
+                               (a, p) => new { a, p }).
+                               Join(db.GtEcapcds,
+                                b => new { b.p.FloorId },
+                               c => new { FloorId = c.ApplicationCode }, (b, c) => new { b, c }).
+                               Select(r => new DO_CounterMapping
                                {
                                    BusinessKey = r.b.a.x.BusinessKey,
                                    CounterNumber = r.b.a.x.CounterNumber,
-                                   TokenType = r.b.a.x.TokenType,
-                                   //FloorId = r.b.a.x.FloorId,
-                                   FloorId = r.b.p.FloorId,
+                                   TokenPrefix = r.b.a.x.TokenPrefix,
+                                   CounterKey= r.b.a.x.CounterKey,
+                                   //FloorId = r.b.p.FloorId,
                                    ActiveStatus = r.b.a.x.ActiveStatus,
+                                   TokenType = r.b.a.y.TokenType,
                                    TokenDesc = r.b.a.y.TokenDesc,
-                                   CounterNumberdesc = r.b.p.CounterNumber,
-                                   FloorName = r.c.CodeDesc
-                               }).ToListAsync();
-
+                                   //CounterNumberdesc = r.b.p.CounterNumber,
+                                   FloorId = r.b.a.x.FloorId,
+                                   CounterNumberdesc = r.b.a.x.CounterNumber,
+                                   FloorName = r.c.CodeDesc,
+                                   
+                               }).OrderBy(x => x.FloorName).ThenBy(x => x.CounterNumber).ToListAsync();
                     return ds;
+
 
                 }
 
@@ -248,24 +304,25 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var _map = db.GtTokm02s.Where(x => x.BusinessKey == obj.BusinessKey && x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "")
-                        && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var _map = db.GtTokm03s.Where(x => x.BusinessKey == obj.BusinessKey && x.TokenPrefix.ToUpper().Replace(" ", "") == obj.TokenPrefix.ToUpper().Replace(" ", "")
+                       &&x.FloorId==obj.FloorId && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_map != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0187", Message = string.Format(_localizer[name: "W0187"]) };
                         }
 
-                        GtTokm02 t_map = new GtTokm02();
+                        GtTokm03 t_map = new GtTokm03();
                         t_map.BusinessKey = obj.BusinessKey;
-                        t_map.TokenType = obj.TokenType;
+                        t_map.TokenPrefix = obj.TokenPrefix;
+                        t_map.FloorId = obj.FloorId;
                         t_map.CounterNumber = obj.CounterNumber;
-                        //t_map.FloorId = obj.FloorId;
+                        t_map.CounterKey = (obj.TokenPrefix+"-"+obj.FloorId+"-"+obj.CounterNumber).ToString();
                         t_map.ActiveStatus = obj.ActiveStatus;
                         t_map.FormId = obj.FormId;
                         t_map.CreatedBy = obj.UserID;
                         t_map.CreatedOn = System.DateTime.Now;
                         t_map.CreatedTerminal = obj.TerminalID;
-                        db.GtTokm02s.Add(t_map);
+                        db.GtTokm03s.Add(t_map);
                         await db.SaveChangesAsync();
                         dbContext.Commit();
                         return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
@@ -289,13 +346,13 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var t_map = db.GtTokm02s.Where(x => x.BusinessKey == obj.BusinessKey && x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "")
-                       && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var t_map = db.GtTokm03s.Where(x => x.BusinessKey == obj.BusinessKey && x.TokenPrefix.ToUpper().Replace(" ", "") == obj.TokenPrefix.ToUpper().Replace(" ", "")
+                        &&x.FloorId==obj.FloorId  && x.CounterNumber.ToUpper().Replace(" ", "") == obj.CounterNumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (t_map == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0188", Message = string.Format(_localizer[name: "W0188"]) };
                         }
-                        //t_map.FloorId = obj.FloorId;
+                        //t_map.CounterKey = (obj.TokenPrefix+"-"+obj.FloorId+"-"+obj.CounterNumber).ToString();
                         t_map.ActiveStatus = obj.ActiveStatus;
                         t_map.ModifiedBy = obj.UserID;
                         t_map.ModifiedOn = System.DateTime.Now;
@@ -315,7 +372,7 @@ namespace eSya.TokenSystem.DL.Repository
             }
         }
 
-        public async Task<DO_ReturnParameter> ActiveOrDeActiveCounterMapping(bool status, int businesskey, string tokentype, string counternumber)
+        public async Task<DO_ReturnParameter> ActiveOrDeActiveCounterMapping(bool status, int businesskey, string tokenprefix, string counternumber,int floorId)
         {
             using (var db = new eSyaEnterprise())
             {
@@ -323,8 +380,8 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var t_map = db.GtTokm02s.Where(x => x.BusinessKey == businesskey && x.TokenType.ToUpper().Replace(" ", "") == tokentype.ToUpper().Replace(" ", "")
-                           && x.CounterNumber.ToUpper().Replace(" ", "") == counternumber.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var t_map = db.GtTokm03s.Where(x => x.BusinessKey == businesskey && x.TokenPrefix.ToUpper().Replace(" ", "") == tokenprefix.ToUpper().Replace(" ", "")
+                         && x.FloorId== floorId && x.CounterNumber.ToUpper().Replace(" ", "") == counternumber.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (t_map == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0188", Message = string.Format(_localizer[name: "W0188"]) };

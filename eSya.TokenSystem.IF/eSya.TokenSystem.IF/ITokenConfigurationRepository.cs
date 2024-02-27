@@ -10,7 +10,6 @@ namespace eSya.TokenSystem.IF
     public interface ITokenConfigurationRepository
     {
         #region Token Configuration
-
         Task<List<DO_TokenConfiguration>> GetActiveTokens();
 
         Task<List<DO_TokenConfiguration>> GetAllConfigureTokens();
@@ -19,7 +18,7 @@ namespace eSya.TokenSystem.IF
 
         Task<DO_ReturnParameter> UpdateToken(DO_TokenConfiguration obj);
 
-        Task<DO_ReturnParameter> ActiveOrDeActiveToken(bool status, string tokentype);
+        Task<DO_ReturnParameter> ActiveOrDeActiveToken(bool status, string tokentype, string tokenPrefix);
 
         #endregion
     }

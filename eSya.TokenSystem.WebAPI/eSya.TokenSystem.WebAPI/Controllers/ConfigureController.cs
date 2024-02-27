@@ -69,9 +69,9 @@ namespace eSya.TokenSystem.WebAPI.Controllers
         /// UI Reffered -Token Configure
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ActiveOrDeActiveToken(bool status, string tokentype)
+        public async Task<IActionResult> ActiveOrDeActiveToken(bool status, string tokentype,string tokenPrefix)
         {
-            var msg = await _TokenConfigurationRepository.ActiveOrDeActiveToken(status, tokentype);
+            var msg = await _TokenConfigurationRepository.ActiveOrDeActiveToken(status, tokentype, tokenPrefix);
             return Ok(msg);
 
         }

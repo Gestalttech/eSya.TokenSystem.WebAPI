@@ -55,7 +55,9 @@ namespace eSya.TokenSystem.DL.Repository
                                         TokenType = t.TokenType,
                                         TokenDesc = t.TokenDesc,
                                         ConfirmationUrl = t.ConfirmationUrl,
+                                        QrcodeUrl=t.QrcodeUrl,
                                         TokenPrefix = t.TokenPrefix,
+                                        IsEnCounter=t.IsEnCounter,
                                         DisplaySequence = t.DisplaySequence,
                                         TokenNumberLength = t.TokenNumberLength,
                                         ActiveStatus = t.ActiveStatus
@@ -78,7 +80,8 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var t_type = db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var t_type = db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "") &&
+                        x.TokenPrefix.ToUpper().Replace(" ", "") == obj.TokenPrefix.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (t_type != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0190", Message = string.Format(_localizer[name: "W0190"]) };
@@ -101,9 +104,11 @@ namespace eSya.TokenSystem.DL.Repository
                         t_cnfg.TokenType = obj.TokenType;
                         t_cnfg.TokenDesc = obj.TokenDesc;
                         t_cnfg.ConfirmationUrl = obj.ConfirmationUrl;
+                        t_cnfg.QrcodeUrl = obj.QrcodeUrl;
                         t_cnfg.DisplaySequence = obj.DisplaySequence;
                         t_cnfg.TokenPrefix = obj.TokenPrefix;
                         t_cnfg.TokenNumberLength = obj.TokenNumberLength;
+                        t_cnfg.IsEnCounter = obj.IsEnCounter; 
                         t_cnfg.ActiveStatus = obj.ActiveStatus;
                         t_cnfg.FormId = obj.FormId;
                         t_cnfg.CreatedBy = obj.UserID;
@@ -135,7 +140,8 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        var t_cnfg = db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "")).FirstOrDefault();
+                        var t_cnfg = db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == obj.TokenType.ToUpper().Replace(" ", "") &&
+                        x.TokenPrefix.ToUpper().Replace(" ", "") == obj.TokenPrefix.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (t_cnfg == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0191", Message = string.Format(_localizer[name: "W0191"]) };
@@ -168,9 +174,11 @@ namespace eSya.TokenSystem.DL.Repository
 
                         t_cnfg.TokenDesc = obj.TokenDesc;
                         t_cnfg.ConfirmationUrl = obj.ConfirmationUrl;
+                        t_cnfg.QrcodeUrl = obj.QrcodeUrl;
                         t_cnfg.DisplaySequence = obj.DisplaySequence;
                         t_cnfg.TokenPrefix = obj.TokenPrefix;
                         t_cnfg.TokenNumberLength = obj.TokenNumberLength;
+                        t_cnfg.IsEnCounter = obj.IsEnCounter;
                         t_cnfg.ActiveStatus = obj.ActiveStatus;
                         t_cnfg.ModifiedBy = obj.UserID;
                         t_cnfg.ModifiedOn = System.DateTime.Now;
@@ -189,7 +197,7 @@ namespace eSya.TokenSystem.DL.Repository
             }
         }
 
-        public async Task<DO_ReturnParameter> ActiveOrDeActiveToken(bool status, string tokentype)
+        public async Task<DO_ReturnParameter> ActiveOrDeActiveToken(bool status, string tokentype,string tokenPrefix)
         {
             using (var db = new eSyaEnterprise())
             {
@@ -197,7 +205,8 @@ namespace eSya.TokenSystem.DL.Repository
                 {
                     try
                     {
-                        GtTokm01 t_cnfg = await db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == tokentype.ToUpper().Replace(" ", "")).FirstOrDefaultAsync();
+                        GtTokm01 t_cnfg = await db.GtTokm01s.Where(x => x.TokenType.ToUpper().Replace(" ", "") == tokentype.ToUpper().Replace(" ", "")
+                        && x.TokenPrefix.ToUpper().Replace(" ", "") == tokenPrefix.ToUpper().Replace(" ", "")).FirstOrDefaultAsync();
 
                         if (t_cnfg == null)
                         {

@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="IAddonRepository.cs" />
+    <Compile Remove="IDisplaySystemRepository.cs" />
+    <Compile Remove="ITokenGenerationRepository.cs" />
+    <Compile Remove="ITokenManagementRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

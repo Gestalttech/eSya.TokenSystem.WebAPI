@@ -71,9 +71,9 @@ namespace eSya.TokenSystem.WebAPI.Controllers
         /// UI Reffered -Token Counter
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ActiveOrDeActiveTokenCounter(bool status, int businesskey, string counternumber)
+        public async Task<IActionResult> ActiveOrDeActiveTokenCounter(bool status, int businesskey, string counternumber, int floorId)
         {
-            var msg = await _iCounterMappingRepository.ActiveOrDeActiveTokenCounter(status, businesskey, counternumber);
+            var msg = await _iCounterMappingRepository.ActiveOrDeActiveTokenCounter(status, businesskey, counternumber, floorId);
             return Ok(msg);
 
         }
@@ -82,6 +82,27 @@ namespace eSya.TokenSystem.WebAPI.Controllers
 
         #region Token Mapping
 
+        /// <summary>
+        /// Getting  Active Token Prefix for dropdown.
+        /// UI Reffered - Counter Mapping
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetActiveTokensPrefix()
+        {
+            var _cnos = await _iCounterMappingRepository.GetActiveTokensPrefix();
+            return Ok(_cnos);
+        }
+
+        /// <summary>
+        /// Getting  Active Floors by Business Key for dropdown.
+        /// UI Reffered - Counter Mapping
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetActiveFloorsbyBusinessKey(int businesskey)
+        {
+            var floors = await _iCounterMappingRepository.GetActiveFloorsbyBusinessKey(businesskey);
+            return Ok(floors);
+        }
         /// <summary>
         /// Getting  Counter Numbers by Floor Id.
         /// UI Reffered - Counter Mapping
@@ -133,9 +154,9 @@ namespace eSya.TokenSystem.WebAPI.Controllers
         /// UI Reffered -Counter Mapping
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ActiveOrDeActiveCounterMapping(bool status, int businesskey, string tokentype, string counternumber)
+        public async Task<IActionResult> ActiveOrDeActiveCounterMapping(bool status, int businesskey, string tokenprefix, string counternumber, int floorId)
         {
-            var msg = await _iCounterMappingRepository.ActiveOrDeActiveCounterMapping(status, businesskey, tokentype, counternumber);
+            var msg = await _iCounterMappingRepository.ActiveOrDeActiveCounterMapping(status, businesskey, tokenprefix, counternumber, floorId);
             return Ok(msg);
 
         }
