@@ -188,13 +188,13 @@ namespace eSya.TokenSystem.DL.Repository
             {
                 try
                 {
-                    var tokens = await db.GtTokm01s.Where(x => x.ActiveStatus == true)
+                    var tokens =  db.GtTokm01s.Where(x => x.ActiveStatus == true)
 
                                         .Select(t => new DO_TokenConfiguration
                                         {
                                             TokenPrefix = t.TokenPrefix,
                                             TokenDesc = t.TokenDesc
-                                        }).OrderBy(x=>x.DisplaySequence).ToListAsync();
+                                        }).OrderBy(x=>x.DisplaySequence).ToList();
                     return tokens;
                 }
 
