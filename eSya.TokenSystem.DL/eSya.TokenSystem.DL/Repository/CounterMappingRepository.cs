@@ -193,7 +193,8 @@ namespace eSya.TokenSystem.DL.Repository
                                         .Select(t => new DO_TokenConfiguration
                                         {
                                             TokenPrefix = t.TokenPrefix,
-                                            TokenDesc = t.TokenDesc
+                                            TokenDesc = t.TokenDesc,
+                                            DisplaySequence=t.DisplaySequence
                                         }).OrderBy(x=>x.DisplaySequence).ToList();
                     return tokens;
                 }
