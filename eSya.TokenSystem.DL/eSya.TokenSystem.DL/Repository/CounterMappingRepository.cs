@@ -194,7 +194,7 @@ namespace eSya.TokenSystem.DL.Repository
                                         {
                                             TokenPrefix = t.TokenPrefix,
                                             TokenDesc = t.TokenDesc
-                                        }).ToListAsync();
+                                        }).OrderBy(x=>x.DisplaySequence).ToListAsync();
                     return tokens;
                 }
 
