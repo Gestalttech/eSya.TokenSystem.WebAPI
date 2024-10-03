@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eSya.TokenSystem.DO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc38e18f40b5594c279f16b03877093c33fbaeae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("eSya.TokenSystem.DO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eSya.TokenSystem.DO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
